@@ -2,10 +2,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
-    "build": "npm run setup && next build",
+    "build": "next build",
     "build-only": "next build",
-    "start": "next start",
-    "setup": "node ./setup.mjs"
+    "start": "next start"
   },
   "dependencies": {
     "@googleapis/youtube": "^13.0.0",
