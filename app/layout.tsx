@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: 'Lee Robinson',
+    title: 'Sujal Shah',
     card: 'summary_large_image',
   },
   verification: {

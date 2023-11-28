@@ -3,14 +3,14 @@ import { Suspense, cache } from 'react';
 import { notFound } from 'next/navigation';
 import { CustomMDX } from 'app/components/mdx';
 import { getViewsCount } from 'app/db/queries';
-import { getBlogPosts } from 'app/db/blog';
+import { getSnippets } from 'app/db/snippets';
 import ViewCounter from '../view-counter';
 import { increment } from 'app/db/actions';
 
 export async function generateMetadata({
   params,
 }): Promise<Metadata | undefined> {
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
+  let post = getSnippets().find((post) => post.slug === params.slug);
   if (!post) {
     return;
   }
@@ -79,7 +79,7 @@ function formatDate(date: string) {
 }
 
 export default function Blog({ params }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
+  let post = getSnippets().find((post) => post.slug === params.slug);
 
   if (!post) {
     notFound();
@@ -104,7 +104,7 @@ export default function Blog({ params }) {
             url: `https://sujal.vercel.app/blog/${post.slug}`,
             author: {
               '@type': 'Person',
-              name: 'Lee Robinson',
+              name: 'Sujal Shah',
             },
           }),
         }}

@@ -5,7 +5,7 @@ import { Suspense } from 'react';
 import Form from './form';
 
 export const metadata = {
-  title: 'Guestbook',
+  title: 'Guestbook - Sujal Shah',
   description: 'Sign my guestbook and leave your mark.',
 };
 
@@ -13,8 +13,12 @@ export default function GuestbookPage() {
   return (
     <section>
       <h1 className="font-medium text-2xl mb-8 tracking-tighter">
-        sign my guestbook
+        ✍️ Sign My Guestbook
       </h1>
+      <p className="mb-8 text-gray-300">
+        Leave a comment below. It could be anything - appreciation, information,
+        wisdom, or even humor. Surprise me!
+      </p>
       <Suspense>
         <GuestbookForm />
         <GuestbookEntries />

@@ -2,22 +2,22 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 import ViewCounter from './view-counter';
 import { getViewsCount } from 'app/db/queries';
-import { getBlogPosts } from 'app/db/blog';
+import { getSnippets } from 'app/db/snippets';
 
 export const metadata = {
-  title: 'Blog',
+  title: 'Snippets - Sujal Shah',
   description: 'Read my thoughts on software development, design, and more.',
 };
 
-export default function BlogPage() {
-  let allBlogs = getBlogPosts();
+export default function SnippetsPage() {
+  const allSnippets = getSnippets();
 
   return (
     <section>
       <h1 className="font-medium text-2xl mb-8 tracking-tighter">
-        read my blog
+        📝 Code Snippets
       </h1>
-      {allBlogs
+      {allSnippets
         .sort((a, b) => {
           if (
             new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
@@ -30,7 +30,7 @@ export default function BlogPage() {
           <Link
             key={post.slug}
             className="flex flex-col space-y-1 mb-4"
-            href={`/blog/${post.slug}`}
+            href={`/snippets/${post.slug}`}
           >
             <div className="w-full flex flex-col">
               <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">

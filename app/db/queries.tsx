@@ -20,7 +20,7 @@ let yt = youtube({
   auth: googleAuth,
 });
 
-export async function getBlogViews() {
+export async function getSnippetsViews() {
   noStore();
   let data = await sql`
     SELECT count

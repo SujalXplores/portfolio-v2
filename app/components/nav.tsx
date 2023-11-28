@@ -7,16 +7,16 @@ import Link from 'next/link';
 
 const navItems = {
   '/': {
-    name: 'home',
+    name: 'Home',
   },
-  '/work': {
-    name: 'work',
+  '/experiments': {
+    name: 'Experiments',
   },
-  '/blog': {
-    name: 'blog',
+  '/snippets': {
+    name: 'Snippets',
   },
   '/guestbook': {
-    name: 'guestbook',
+    name: 'Guestbook',
   },
 };
 
@@ -47,8 +47,8 @@ let cx = (...classes) => classes.filter(Boolean).join(' ');
 
 function NavItem({ path, name }: { path: string; name: string }) {
   let pathname = usePathname() || '/';
-  if (pathname.includes('/blog/')) {
-    pathname = '/blog';
+  if (pathname.includes('/snippets/')) {
+    pathname = '/snippets';
   }
   let isActive = path === pathname;
 
