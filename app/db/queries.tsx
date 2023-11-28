@@ -50,7 +50,7 @@ export const getLeeYouTubeSubs = cache(
     let channel = response.data.items![0];
     return Number(channel?.statistics?.subscriberCount).toLocaleString();
   },
-  ['leerob-youtube-subs'],
+  ['sujal-youtube-subs'],
   {
     revalidate: 3600,
   }
