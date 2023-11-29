@@ -4,7 +4,6 @@ import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import { Navbar } from './components/nav';
 import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sujal.vercel.app'),
@@ -12,10 +11,12 @@ export const metadata: Metadata = {
     default: 'Sujal Shah',
     template: '%s | Sujal Shah',
   },
-  description: 'Developer, writer, and creator.',
+  description:
+    'Crafting engaging digital experiences through meticulous software engineering. Sujal Shah blends creativity and technical expertise to build interactive, user-friendly web interfaces. Embark on a journey through his inventive portfolio of web development projects.',
   openGraph: {
     title: 'Sujal Shah',
-    description: 'Developer, writer, and creator.',
+    description:
+      'Crafting engaging digital experiences through meticulous software engineering. Sujal Shah blends creativity and technical expertise to build interactive, user-friendly web interfaces. Embark on a journey through his inventive portfolio of web development projects.',
     url: 'https://sujal.vercel.app',
     siteName: 'Sujal Shah',
     locale: 'en_US',
@@ -63,7 +64,6 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Analytics />
-          <SpeedInsights />
         </main>
       </body>
     </html>

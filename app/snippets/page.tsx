@@ -47,7 +47,7 @@ export default function SnippetsPage() {
 }
 
 async function Views({ slug }: { slug: string }) {
-  let views = await getViewsCount();
+  const views = await getViewsCount();
 
   return <ViewCounter allViews={views} slug={slug} />;
 }

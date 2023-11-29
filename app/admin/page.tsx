@@ -8,16 +8,16 @@ export const metadata = {
 };
 
 export default async function GuestbookPage() {
-  let session = await auth();
+  const session = await auth();
   if (session?.user?.email !== 'shahc9437@gmail.com') {
     redirect('/');
   }
 
-  let entries = await getGuestbookEntries();
+  const entries = await getGuestbookEntries();
 
   return (
     <section>
-      <h1 className="font-medium text-2xl mb-8 tracking-tighter">admin</h1>
+      <h1 className="font-medium text-2xl mb-8 tracking-tighter">Admin</h1>
       <Form entries={entries} />
     </section>
   );

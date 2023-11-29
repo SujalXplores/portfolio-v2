@@ -7,8 +7,9 @@ import { deleteGuestbookEntries } from 'app/db/actions';
 export default function Form({ entries }) {
   const [selectedInputs, setSelectedInputs] = useState<string[]>([]);
   const [startShiftClickIndex, setStartShiftClickIndex] = useState<number>(0);
-  const [isShiftKeyPressed, setIsShiftKeyPressed] = useState(false);
-  const [isCommandKeyPressed, setIsCommandKeyPressed] = useState(false);
+  const [isShiftKeyPressed, setIsShiftKeyPressed] = useState<boolean>(false);
+  const [isCommandKeyPressed, setIsCommandKeyPressed] =
+    useState<boolean>(false);
 
   useEffect(() => {
     const keyDownHandler = ({ key }) => {
@@ -106,8 +107,9 @@ export default function Form({ entries }) {
       }}
     >
       <DeleteButton isActive={selectedInputs.length !== 0} />
-      {entries.map((entry, index) => (
+      {entries.map((entry, index: number) => (
         <GuestbookEntry key={entry.id} entry={entry}>
+          {console.info(`L:112 `, entry)}
           <input
             name={entry.id}
             type="checkbox"
@@ -149,7 +151,7 @@ function DeleteButton({ isActive }) {
           'bg-red-300/50 dark:bg-red-700/50': isActive,
         }
       )}
-      disabled={pending}
+      disabled={pending || !isActive}
       type="submit"
     >
       Delete Entries

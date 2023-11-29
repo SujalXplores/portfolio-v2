@@ -43,14 +43,14 @@ export function Navbar() {
   );
 }
 
-let cx = (...classes) => classes.filter(Boolean).join(' ');
+const cx = (...classes) => classes.filter(Boolean).join(' ');
 
 function NavItem({ path, name }: { path: string; name: string }) {
+  const snippetsPath = '/snippets';
   let pathname = usePathname() || '/';
-  if (pathname.includes('/snippets/')) {
-    pathname = '/snippets';
-  }
-  let isActive = path === pathname;
+  pathname = pathname.includes(snippetsPath) ? snippetsPath : pathname;
+
+  const isActive = path === pathname;
 
   return (
     <Link
