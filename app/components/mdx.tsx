@@ -1,4 +1,5 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
+// @ts-ignore
 import { highlight } from 'sugar-high';
 import { createElement } from 'react';
 import Image from 'next/image';
