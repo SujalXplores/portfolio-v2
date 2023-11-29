@@ -50,7 +50,7 @@ export async function saveGuestbookEntry(formData: FormData) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: 'guestbook@sujal.vercel.app',
+      from: 'onboarding@resend.dev',
       to: 'shahc9437@gmail.com',
       subject: 'New Guestbook Entry',
       html: `<p>Email: ${email}</p><p>Message: ${body}</p>`,
