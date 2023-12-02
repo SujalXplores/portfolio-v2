@@ -23,11 +23,18 @@
     --sh-identifier: white;
     --sh-keyword: #f47067;
     --sh-string: #0fa295;
+    color-scheme: dark;
   }
 }
 
 html {
   min-width: 360px;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .prose .anchor {
@@ -123,6 +130,7 @@ table {
   max-width: fit-content;
   overflow-x: auto;
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 .prose .callout > p {
