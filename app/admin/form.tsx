@@ -99,17 +99,16 @@ export default function Form({ entries }) {
     }
   };
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await deleteGuestbookEntries(selectedInputs);
+  };
+
   return (
-    <form
-      onSubmit={async (e) => {
-        e.preventDefault();
-        await deleteGuestbookEntries(selectedInputs);
-      }}
-    >
+    <form onSubmit={handleSubmit}>
       <DeleteButton isActive={selectedInputs.length !== 0} />
       {entries.map((entry, index: number) => (
         <GuestbookEntry key={entry.id} entry={entry}>
-          {console.info(`L:112 `, entry)}
           <input
             name={entry.id}
             type="checkbox"
@@ -117,6 +116,8 @@ export default function Form({ entries }) {
             onChange={(e) => handleCheck(e.target.checked, entry.id, index)}
             onKeyDown={(e) => handleKeyDown(e, entry.id, index)}
             checked={selectedInputs.includes(entry.id)}
+            autoComplete="off"
+            spellCheck="false"
           />
         </GuestbookEntry>
       ))}

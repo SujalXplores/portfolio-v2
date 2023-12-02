@@ -8,10 +8,10 @@ import Link from 'next/link';
 import { TweetComponent } from './tweet';
 
 function Table({ data }) {
-  const headers = data.headers.map((header, index) => (
+  const headers = data.headers.map((header: string, index: number) => (
     <th key={index}>{header}</th>
   ));
-  const rows = data.rows.map((row, index) => (
+  const rows = data.rows.map((row: string[], index: number) => (
     <tr key={index}>
       {row.map((cell, cellIndex) => (
         <td key={cellIndex}>{cell}</td>
