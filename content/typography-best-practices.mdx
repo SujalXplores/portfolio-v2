@@ -1,0 +1,83 @@
+---
+title: 'Advanced Typography Best Practices'
+publishedAt: '2023-12-01'
+summary: 'This is my first snippet.'
+---
+
+Typography plays a pivotal role in creating visually appealing websites and applications while ensuring easy legibility for the users. Here are some advanced techniques and practices to further improve typography.
+
+### 1. -webkit-font-smoothing: antialiased
+
+Use this CSS property to enhance text clarity and legibility on different browsers that use webkit-based engines like Chrome, Opera or Safari. This gives the fonts a smoother and cleaner appearance.
+
+```js
+body {
+  -webkit-font-smoothing: antialiased;
+}
+```
+
+### 2. text-rendering: optimizeLegibility
+
+This CSS property provides instructions to the browser to prioritize text legibility over rendering speed and geometric precision.
+
+```css
+body {
+  text-rendering: optimizeLegibility;
+}
+```
+
+### 3. Font Subsetting
+
+Font subsetting helps reduce the file size of web fonts by only including the characters that are actually used or relevant to the intended audience of a website. Consult font provider documentation or utilize online services for subsetting.
+
+### 4. Constant Font Weight on Hover
+
+Keeping font weight constant on hover and selected states prevents the layout shift, providing a smooth experience.
+
+```css
+a:hover, a:active {
+  font-weight: inherit;
+}
+```
+
+### 5. Avoid Using Font Weights Below 400
+
+Lighter font weights less than 400 can harm readability, especially on lower resolution screens.
+
+```css
+body {
+  font-weight: 400;
+}
+```
+
+### 6. Use CSS clamp() for Fluid Values
+
+CSS clamp() enables responsive and fluid typography. It sets a minimum, preferred, and maximum value for properties like font-size.
+
+```css
+h1 {
+  font-size: clamp(48px, 5vw, 72px);
+}
+```
+
+### 7. font-variant-numeric: tabular-nums
+
+Use this CSS property when uniform character widths are desired to avoid layout shifts, especially in tables and timers.
+
+```css
+table {
+  font-variant-numeric: tabular-nums;
+}
+```
+
+### 8. -webkit-text-size-adjust: 100%
+
+This avoids unexpected text resizing in landscape mode on iOS and some other mobile browsers.
+
+```css
+body {
+  -webkit-text-size-adjust: 100%;
+}
+```
+
+By going beyond the basics and incorporating these advanced tips into your typography practices, you can exert better control over how text is displayed, thereby improving the user experience on your webpages or applications.
