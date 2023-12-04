@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "0.5.10",
-    "@vercel/analytics": "1.1.1",
     "@vercel/postgres": "0.5.1",
     "framer-motion": "10.16.5",
     "geist": "1.1.0",
