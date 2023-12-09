@@ -9,14 +9,14 @@ const navItems = {
   '/': {
     name: 'Home',
   },
-  'https://shahc9437.medium.com/': {
-    name: 'Blog',
-  },
   '/snippets': {
     name: 'Snippets',
   },
   '/guestbook': {
     name: 'Guestbook',
+  },
+  'https://shahc9437.medium.com/': {
+    name: 'Blog',
   },
 };
 
