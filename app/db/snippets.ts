@@ -43,7 +43,7 @@ function extractTweetIds(content: string) {
 function getMDXData(dir: string) {
   const mdxFiles = getMDXFiles(dir);
   return mdxFiles.map((file) => {
-    const { metadata, content } = readMDXFile(path.join(dir, file));
+    const { metadata, content, ...rest } = readMDXFile(path.join(dir, file));
     const slug = path.basename(file, path.extname(file));
     const tweetIds = extractTweetIds(content);
     return {

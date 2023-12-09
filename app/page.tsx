@@ -3,22 +3,20 @@ import Image from 'next/image';
 export default function Page() {
   return (
     <section>
-      <div className="flex flex-col justify-center items-start max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pb-16">
+      <div className="flex flex-col justify-center items-start max-w-2xl border-gray-700 mx-auto pb-16">
         <div className="flex flex-col-reverse sm:flex-row items-start">
           <div className="flex flex-col pr-8">
-            <p className="text-gray-600 dark:text-gray-400 mb-2">
-              Hi, my name is
-            </p>
+            <p className="text-gray-400 mb-2">Hi, my name is</p>
             <h1
               translate="no"
-              className="font-bold text-3xl md:text-5xl tracking-tight text-black dark:text-white"
+              className="font-bold text-3xl md:text-5xl tracking-tight text-white"
             >
               Sujal Shah.
             </h1>
             <h2 className="font-bold text-3xl md:text-5xl tracking-tight mb-8 text-gray-500 mt-1">
               I build things for the web.
             </h2>
-            <p className="text-gray-400 dark:text-gray-400 mb-16">
+            <p className="text-gray-400 mb-16">
               I'm a software engineer specializing in building (and occasionally
               designing) exceptional digital experiences. Currently, I'm focused
               on building accessible, human-centered products at{' '}
@@ -45,10 +43,10 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <ul className="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-600 dark:text-neutral-300">
+      <ul className="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-300">
         <li>
           <a
-            className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
+            className="flex items-center hover:text-neutral-100 transition-all"
             rel="noopener noreferrer"
             target="_blank"
             href="https://twitter.com/sujal_shah10"
@@ -70,7 +68,7 @@ export default function Page() {
         </li>
         <li>
           <a
-            className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
+            className="flex items-center hover:text-neutral-100 transition-all"
             rel="noopener noreferrer"
             target="_blank"
             href="mailto:shahc9437@gmail.com"

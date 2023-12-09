@@ -56,18 +56,15 @@ function NavItem({ path, name }: { path: string; name: string }) {
     <Link
       key={path}
       href={path}
-      className={cx(
-        'transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle',
-        {
-          'text-neutral-500': !isActive,
-        }
-      )}
+      className={cx('transition-all hover:text-neutral-200 flex align-middle', {
+        'text-neutral-500': !isActive,
+      })}
     >
       <span className="relative py-1 px-2">
         {name}
         {path === pathname ? (
           <motion.div
-            className="absolute h-[1px] top-7 mx-2 inset-0 bg-neutral-200 z-[-1] dark:bg-gradient-to-r from-transparent to-neutral-900"
+            className="absolute h-[1px] top-7 mx-2 inset-0 bg-neutral-200 z-[-1] bg-gradient-to-r from-transparent to-neutral-900"
             layoutId="sidebar"
             transition={{
               type: 'spring',

@@ -12,7 +12,7 @@ export const metadata = {
 export default function GuestbookPage() {
   return (
     <section>
-      <h1 className="font-medium text-2xl mb-8 tracking-tighter">
+      <h1 className="font-medium text-3xl mb-8 tracking-tighter">
         ✍️ Sign My Guestbook
       </h1>
       <p className="mb-8 text-gray-300">
@@ -50,9 +50,7 @@ async function GuestbookEntries() {
   return entries.map((entry) => (
     <div key={entry.id} className="flex flex-col space-y-1 mb-4">
       <div className="w-full text-sm break-words">
-        <span className="text-neutral-600 dark:text-neutral-400 mr-1">
-          {entry.created_by}:
-        </span>
+        <span className="text-neutral-400 mr-1">{entry.created_by}:</span>
         {entry.body}
       </div>
     </div>
