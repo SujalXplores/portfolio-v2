@@ -1,9 +1,11 @@
-import Link from 'next/link';
 import { Suspense } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+
+import SkeletonViews from 'app/components/skeleton-loader/views';
 import ViewCounter from './view-counter';
 import { getViewsCount } from 'app/db/queries';
 import { getSnippets } from 'app/db/snippets';
-import Image from 'next/image';
 
 export const metadata = {
   title: 'Snippets - Sujal Shah',
@@ -49,7 +51,7 @@ export default function SnippetsPage() {
         .map((post) => (
           <Link
             key={post.slug}
-            className="flex space-y-1 mb-4 gap-4"
+            className="flex space-y-1 mb-6 gap-4"
             href={`/snippets/${post.slug}`}
           >
             <Image
@@ -59,11 +61,11 @@ export default function SnippetsPage() {
               height="48"
               loading="lazy"
             />
-            <div className="w-full flex flex-col">
+            <div className="w-full flex flex-col border-l border-dashed border-neutral-600 pl-4">
               <p className="text-neutral-100 tracking-tight">
                 {post.metadata.title}
               </p>
-              <Suspense fallback={<p className="h-6" />}>
+              <Suspense fallback={<SkeletonViews />}>
                 <Views slug={post.slug} />
               </Suspense>
             </div>
