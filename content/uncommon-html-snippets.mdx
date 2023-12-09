@@ -1,0 +1,101 @@
+---
+title: 'Uncommon HTML Code Snippets for the Savvy Developer'
+publishedAt: '2023-8-01'
+summary: 'A collection of uncommon HTML code snippets for the savvy developer.'
+image: 'html'
+---
+
+While the core HTML elements and attributes are widely known, there are a few hidden gems that can elevate your development skills and surprise even experienced developers. Here are some unique HTML snippets to explore:
+
+### 1. The dialog element:
+
+This element allows you to create modal dialog boxes without JavaScript. It offers built-in accessibility features and can be styled with CSS.
+
+```html
+<dialog open>
+  <h2>This is a modal dialog!</h2>
+  <p>This content is hidden until the dialog is opened.</p>
+  <button>Close</button>
+</dialog>
+```
+
+### 2. The meter element:
+
+This element allows you to create a progress bar. It can be used to display the progress of a task, such as a file upload or download.
+
+```html
+<progress value="50" max="100">50%</progress>
+```
+
+### 3. The details element:
+
+This element allows you to create an expandable section of content. It can be used to hide or show additional information, such as a list of frequently asked questions.
+
+```html
+<details>
+  <summary>Click to expand</summary>
+  <p>This content is hidden until the details element is opened.</p>
+</details>
+```
+
+### 4. The time element:
+
+This element allows you to display a date or time in a human-readable format. It can be used to display the current date and time, or a date and time in the past or future.
+
+```html
+<time datetime="2023-08-01">August 1, 2023</time>
+```
+
+### 5. The mark element:
+
+This element allows you to highlight text. It can be used to draw attention to important information, such as a keyword or phrase.
+
+```html
+<p>
+  The <mark>mark element</mark> allows you to highlight text.
+</p>
+```
+
+### 6. The slot attribute:
+
+This attribute allows you to distribute content into different slots within a web component. This is primarily used for component development.
+
+```html
+<my-component>
+  <template slot="header">This is the header</template>
+  <template slot="content">This is the content</template>
+</my-component>
+```
+
+### 7. The bdi element:
+
+This element allows you to isolate a part of text that might be formatted in a different direction from other text outside it. It can be used to display text in a different direction from the rest of the text on the page.
+
+```html
+<p>
+  <bdi>مرحبا</bdi> <bdi>你好</bdi> <bdi>こんにちは</bdi>
+</p>
+```
+
+### 8. The wbr element:
+
+This element allows you to specify where in a word it is acceptable to break a line. It can be used to prevent long words from breaking in the middle.
+
+```html
+<p>
+  This is a very long word that will not break:
+  <wbr>supercalifragilisticexpialidocious
+</p>
+```
+
+### 9. The picture element:
+
+This element provides a more responsive way to handle images by specifying different sources for different screen sizes.
+
+```html
+<picture>
+  <source srcset="img_large.jpg" media="(min-width: 768px)">
+  <source srcset="img_medium.jpg" media="(min-width: 480px)">
+  <img src="img_small.jpg" alt="My image">
+</picture>
+```
