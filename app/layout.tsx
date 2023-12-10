@@ -40,6 +40,21 @@ export const metadata: Metadata = {
     google: 'emXNaAu1bB-dJ_oYwAJZSHD-sjn-n__6Zb70R-8Ffn4',
     yandex: 'b18e8e714a783eac',
   },
+  generator: 'Next.js',
+  applicationName: 'Next.js',
+  referrer: 'origin-when-cross-origin',
+  keywords: [
+    'Sujal Shah',
+    'JavaScript',
+    'TypeScript',
+    'Next.js',
+    'Vercel',
+    'React',
+  ],
+  creator: 'Sujal Shah',
+  alternates: {
+    canonical: '/',
+  },
 };
 
 const cx = (...classes: (string | boolean)[]) =>
