@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import { Navbar } from './components/nav';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sujal.vercel.app'),
@@ -12,11 +11,11 @@ export const metadata: Metadata = {
     template: '%s | Sujal Shah',
   },
   description:
-    'Crafting engaging digital experiences through meticulous software engineering. Sujal Shah blends creativity and technical expertise to build interactive, user-friendly web interfaces. Embark on a journey through his inventive portfolio of web development projects.',
+    'Interactive design meets technical expertise. Sujal Shah builds user-friendly web experiences.',
   openGraph: {
     title: 'Sujal Shah',
     description:
-      'Crafting engaging digital experiences through meticulous software engineering. Sujal Shah blends creativity and technical expertise to build interactive, user-friendly web interfaces. Embark on a journey through his inventive portfolio of web development projects.',
+      'Interactive design meets technical expertise. Sujal Shah builds user-friendly web experiences.',
     url: 'https://sujal.vercel.app',
     siteName: 'Sujal Shah',
     locale: 'en_US',
