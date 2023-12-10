@@ -6,6 +6,7 @@ import { getViewsCount } from 'app/db/queries';
 import { getSnippets } from 'app/db/snippets';
 import ViewCounter from '../view-counter';
 import { increment } from 'app/db/actions';
+import SkeletonViews from 'app/components/skeleton-loader/views';
 
 export async function generateMetadata({
   params,
@@ -33,7 +34,7 @@ export async function generateMetadata({
       description,
       type: 'article',
       publishedTime,
-      url: `https://sujal.vercel.app/blog/${post.slug}`,
+      url: `https://sujal.vercel.app/snippets/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -78,7 +79,7 @@ function formatDate(date: string) {
   return `${fullDate} (${formattedDate})`;
 }
 
-export default function Blog({ params }) {
+export default function Snippets({ params }) {
   const post = getSnippets().find((post) => post.slug === params.slug);
 
   if (!post) {
@@ -93,7 +94,7 @@ export default function Blog({ params }) {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
+            '@type': 'Snippet',
             headline: post.metadata.title,
             datePublished: post.metadata.publishedAt,
             dateModified: post.metadata.publishedAt,
@@ -101,7 +102,7 @@ export default function Blog({ params }) {
             image: post.metadata.image
               ? `https://sujal.vercel.app${post.metadata.image}`
               : `https://sujal.vercel.app/og?title=${post.metadata.title}`,
-            url: `https://sujal.vercel.app/blog/${post.slug}`,
+            url: `https://sujal.vercel.app/snippets/${post.slug}`,
             author: {
               '@type': 'Person',
               name: 'Sujal Shah',
@@ -116,7 +117,7 @@ export default function Blog({ params }) {
         <p className="text-sm text-neutral-400">
           {formatDate(post.metadata.publishedAt)}
         </p>
-        <Suspense fallback={<p className="h-5" />}>
+        <Suspense fallback={<SkeletonViews />}>
           <Views slug={post.slug} />
         </Suspense>
       </div>

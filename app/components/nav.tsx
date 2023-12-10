@@ -15,9 +15,6 @@ const navItems = {
   '/guestbook': {
     name: 'Guestbook',
   },
-  'https://shahc9437.medium.com/': {
-    name: 'Blog',
-  },
 };
 
 export function Navbar() {
