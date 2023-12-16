@@ -2,7 +2,6 @@
 
 import { motion, LayoutGroup } from 'framer-motion';
 import { usePathname } from 'next/navigation';
-import { Suspense } from 'react';
 import Link from 'next/link';
 
 const navItems = {
@@ -22,16 +21,11 @@ export function Navbar() {
     <aside className="-ml-[8px] mb-16 tracking-tight">
       <div className="lg:sticky lg:top-20">
         <LayoutGroup>
-          <nav
-            className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
-            id="nav"
-          >
+          <nav className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative">
             <div className="flex flex-row space-x-0 pr-10">
-              <Suspense fallback={null}>
-                {Object.entries(navItems).map(([path, { name }]) => {
-                  return <NavItem key={path} path={path} name={name} />;
-                })}
-              </Suspense>
+              {Object.entries(navItems).map(([path, { name }]) => {
+                return <NavItem key={path} path={path} name={name} />;
+              })}
             </div>
           </nav>
         </LayoutGroup>
