@@ -48,27 +48,21 @@ export default function SnippetsPage() {
           }
           return 1;
         })
-        .map((post) => (
+        .map((post, index) => (
           <Link
             key={post.slug}
-            className="flex space-y-1 mb-6 gap-4"
+            className="flex flex-col space-y-1 mb-6"
             href={`/snippets/${post.slug}`}
           >
-            <Image
-              src={`/svgs/${post.metadata.image}.svg`}
-              alt={post.metadata.title}
-              width="48"
-              height="48"
-              loading="lazy"
-            />
-            <div className="w-full flex flex-col border-l border-dashed border-neutral-600 pl-4">
-              <p className="text-neutral-100 tracking-tight">
-                {post.metadata.title}
-              </p>
-              <Suspense fallback={<SkeletonViews />}>
-                <Views slug={post.slug} />
-              </Suspense>
-            </div>
+            <p className="text-neutral-100 tracking-tight">
+              {index + 1}. {post.metadata.title} -{' '}
+              <span className="text-neutral-400 text-sm">
+                {new Date(post.metadata.publishedAt).toLocaleDateString()}
+              </span>
+            </p>
+            <Suspense fallback={<SkeletonViews />}>
+              <Views slug={post.slug} />
+            </Suspense>
           </Link>
         ))}
     </section>
