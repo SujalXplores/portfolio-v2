@@ -7,6 +7,9 @@ import Form from './form';
 export const metadata = {
   title: 'Guestbook - Sujal Shah',
   description: 'Sign my guestbook and leave your mark.',
+  alternates: {
+    canonical: '/guestbook',
+  },
 };
 
 export default function GuestbookPage() {

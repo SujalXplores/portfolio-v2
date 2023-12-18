@@ -10,6 +10,9 @@ import { getSnippets } from 'app/db/snippets';
 export const metadata = {
   title: 'Snippets - Sujal Shah',
   description: 'Read my thoughts on software development, design, and more.',
+  alternates: {
+    canonical: '/snippets',
+  },
 };
 
 const BuyMeACoffeeButton = () => (
