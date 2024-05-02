@@ -3,6 +3,7 @@ import { getGuestbookEntries } from 'app/db/queries';
 import { SignIn, SignOut } from './buttons';
 import { Suspense } from 'react';
 import Form from './form';
+import GuestbookEntriesSkeleton from 'app/components/skeleton-loader/guestbook-entries';
 
 export const metadata = {
   title: 'Guestbook - Sujal Shah',
@@ -22,7 +23,7 @@ export default function GuestbookPage() {
         Leave a comment below. It could be anything - appreciation, information,
         wisdom, or even humor. Surprise me!
       </p>
-      <Suspense>
+      <Suspense fallback={<GuestbookEntriesSkeleton />}>
         <GuestbookForm />
         <GuestbookEntries />
       </Suspense>
