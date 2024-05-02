@@ -53,9 +53,9 @@ const GuestbookEntriesSkeleton: React.FC = () => {
         foregroundColor="#f5f5f5"
         height="38px"
         width="180px"
-        className="mb-8"
+        className="rounded mb-8"
       >
-        <rect width="180px" height="38px" />
+        <rect width="180px" height="38px" r={4} />
       </ContentLoader>
       {ENTRIES.map(({ id, width }) => (
         <ContentLoader
@@ -65,6 +65,7 @@ const GuestbookEntriesSkeleton: React.FC = () => {
           foregroundColor="#f5f5f5"
           height={36}
           width={width}
+          className="rounded"
         >
           <rect rx="2" ry="2" width={width} height="10" />
         </ContentLoader>
