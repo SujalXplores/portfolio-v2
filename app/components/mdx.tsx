@@ -65,7 +65,7 @@ function ProsCard({ title, pros }) {
     <div className="border border-emerald-900 bg-neutral-900 rounded-xl p-6 my-4 w-full">
       <span>{`You might use ${title} if...`}</span>
       <div className="mt-4">
-        {pros.map((pro) => (
+        {pros.map((pro: string) => (
           <div key={pro} className="flex font-medium items-baseline mb-2">
             <div className="h-4 w-4 mr-2">
               <svg className="h-4 w-4 text-emerald-500" viewBox="0 0 24 24">
