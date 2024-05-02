@@ -1,6 +1,7 @@
 import { sql } from '@vercel/postgres';
 
 const nextConfig = {
+  transpilePackages: ['next-mdx-remote'],
   experimental: {
     ppr: true,
   },
