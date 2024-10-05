@@ -8,9 +8,8 @@ import ViewCounter from '../view-counter';
 import { increment } from 'app/db/actions';
 import SkeletonViews from 'app/components/skeleton-loader/views';
 
-export async function generateMetadata({
-  params,
-}): Promise<Metadata | undefined> {
+export async function generateMetadata(props): Promise<Metadata | undefined> {
+  const params = await props.params;
   const post = getSnippets().find((post) => post.slug === params.slug);
   if (!post) {
     return;
@@ -82,7 +81,8 @@ function formatDate(date: string) {
   return `${fullDate} (${formattedDate})`;
 }
 
-export default function Snippets({ params }) {
+export default async function Snippets(props) {
+  const params = await props.params;
   const post = getSnippets().find((post) => post.slug === params.slug);
 
   if (!post) {
