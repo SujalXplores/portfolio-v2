@@ -1,9 +1,9 @@
 import { auth } from 'app/auth';
-import { getGuestbookEntries } from 'app/db/queries';
+import { getGuestbookEntries } from '@/db/queries';
 import { SignIn, SignOut } from './buttons';
 import { Suspense } from 'react';
 import Form from './form';
-import GuestbookEntriesSkeleton from 'app/components/skeleton-loader/guestbook-entries';
+import GuestbookEntriesSkeleton from '@/components/skeleton-loader/guestbook-entries';
 
 export const metadata = {
   title: 'Guestbook - Sujal Shah',
@@ -13,7 +13,7 @@ export const metadata = {
   },
 };
 
-export default function GuestbookPage() {
+export default async function GuestbookPage() {
   return (
     <section>
       <h1 className="font-medium text-3xl mb-8 tracking-tighter">

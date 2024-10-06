@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import ContentLoader from 'react-content-loader';
 
 const ENTRIES = [
@@ -44,7 +44,7 @@ const ENTRIES = [
   },
 ];
 
-const GuestbookEntriesSkeleton: React.FC = () => {
+const GuestbookEntriesSkeleton: FC = () => {
   return (
     <>
       <ContentLoader

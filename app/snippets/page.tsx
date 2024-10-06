@@ -2,10 +2,10 @@ import { Suspense } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import SkeletonViews from 'app/components/skeleton-loader/views';
+import SkeletonViews from '@/components/skeleton-loader/views';
 import ViewCounter from './view-counter';
-import { getViewsCount } from 'app/db/queries';
-import { getSnippets } from 'app/db/snippets';
+import { getViewsCount } from '@/db/queries';
+import { getSnippets } from '@/db/snippets';
 
 export const metadata = {
   title: 'Snippets - Sujal Shah',

@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import { Suspense, cache } from 'react';
 import { notFound } from 'next/navigation';
-import { CustomMDX } from 'app/components/mdx';
-import { getViewsCount } from 'app/db/queries';
-import { getSnippets } from 'app/db/snippets';
+import { CustomMDX } from '@/components/mdx';
+import { getViewsCount } from '@/db/queries';
+import { getSnippets } from '@/db/snippets';
 import ViewCounter from '../view-counter';
-import { increment } from 'app/db/actions';
-import SkeletonViews from 'app/components/skeleton-loader/views';
+import { increment } from '@/db/actions';
+import SkeletonViews from '@/components/skeleton-loader/views';
 
 export async function generateMetadata(props): Promise<Metadata | undefined> {
   const params = await props.params;

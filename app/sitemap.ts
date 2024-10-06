@@ -1,4 +1,4 @@
-import { getSnippets } from 'app/db/snippets';
+import { getSnippets } from '@/db/snippets';
 
 export default async function sitemap() {
   const snippets = getSnippets().map((post) => ({

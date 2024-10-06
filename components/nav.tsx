@@ -53,7 +53,7 @@ function NavItem({ path, name }: { path: string; name: string }) {
     >
       <span className="relative py-1 px-2">
         {name}
-        {path === pathname ? (
+        {isActive ? (
           <motion.div
             className="absolute h-[1px] top-7 mx-2 inset-0 bg-neutral-200 z-[-1] bg-gradient-to-r from-transparent to-neutral-900"
             layoutId="sidebar"

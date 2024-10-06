@@ -1,7 +1,7 @@
-import React from 'react';
+import { FC } from 'react';
 import ContentLoader from 'react-content-loader';
 
-const SkeletonViews: React.FC = () => {
+const SkeletonViews: FC = () => {
   return (
     <ContentLoader
       speed={2}
