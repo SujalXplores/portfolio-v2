@@ -34,13 +34,15 @@ export default async function GuestbookPage() {
 async function GuestbookForm() {
   const session = await auth();
 
-  return session?.user ? (
+  if (!session?.user) {
+    return <SignIn />;
+  }
+
+  return (
     <>
       <Form />
       <SignOut />
     </>
-  ) : (
-    <SignIn />
   );
 }
 
