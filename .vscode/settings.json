@@ -80,6 +80,14 @@
   "window.zoomLevel": 1,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.iconTheme": "material-icon-theme",
-  "cSpell.words": ["lucide", "rehype", "shiki", "tailwindcss"],
+  "cSpell.words": [
+    "framermotion",
+    "lucide",
+    "nextjs",
+    "openai",
+    "rehype",
+    "shiki",
+    "tailwindcss"
+  ],
   "css.customData": [".vscode/tailwind.json"]
 }
