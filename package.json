@@ -1,7 +1,10 @@
 {
-  "name": "porfolio",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Sujal Shah"
+  },
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
@@ -42,12 +45,14 @@
     "@types/node": "22.7.5",
     "@types/react": "18.3.11",
     "@types/react-dom": "18.3.0",
+    "autoprefixer": "10.4.20",
     "eslint": "8.56.0",
     "eslint-config-next": "14.2.15",
-    "husky": "^9.1.6",
-    "lint-staged": "^15.2.10",
+    "husky": "9.1.6",
+    "lint-staged": "15.2.10",
     "postcss": "8.4.47",
     "tailwindcss": "3.4.13",
     "typescript": "5.6.3"
-  }
+  },
+  "browserslist": "defaults"
 }
