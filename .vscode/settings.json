@@ -81,6 +81,7 @@
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.iconTheme": "material-icon-theme",
   "cSpell.words": [
+    "clsx",
     "framermotion",
     "lucide",
     "mousex",
@@ -88,6 +89,7 @@
     "openai",
     "rehype",
     "shiki",
+    "Sujal",
     "tailwindcss"
   ],
   "css.customData": [".vscode/tailwind.json"]
