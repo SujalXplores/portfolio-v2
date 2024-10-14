@@ -2,12 +2,14 @@ import { HomeIcon, NotebookIcon } from 'lucide-react';
 
 import { Icons } from '@/components/icons';
 
+// calculate experience in years dynamically
+const experience = new Date().getFullYear() - 2021;
+
 export const DATA = {
   name: 'Sujal Shah',
   initials: 'SS',
   url: 'https://sujal.vercel.app',
-  description:
-    'Passionate Software Engineer with 3+ years of experience crafting innovative web solutions. Specializing in web development and always eager to embrace new technologies.',
+  description: `Innovative Software Engineer with ${experience}+ years crafting cutting-edge web solutions. Passionate about pushing technological boundaries.`,
   summary:
     "As a passionate software engineer, I specialize in crafting exceptional and innovative digital experiences. My expertise lies in building robust, accessible, and human-centered products that make a real impact. Currently, I'm leveraging my skills to create cutting-edge solutions at [ZURU](https://zuru.tech), where I continue to push the boundaries of what's possible in tech.",
   avatarUrl: '/me.png',
@@ -65,7 +67,7 @@ export const DATA = {
       start: 'January 2022',
       end: 'Present',
       description:
-        'Leading development of innovative web applications using cutting-edge technologies. Architecting and implementing scalable solutions with React, Next.js, and TypeScript. Collaborating closely with cross-functional teams to deliver high-performance, user-centric products. Mentoring junior developers and contributing to best practices and code standards. Continuously optimizing application performance and user experience.',
+        'Spearheading development of cutting-edge web applications using React, Next.js, and TypeScript. Designing scalable solutions and collaborating with cross-functional teams to deliver high-performance, user-centric products. Mentoring junior developers, establishing best practices, and continuously optimizing application performance and user experience.',
     },
     {
       company: 'Walmart',
