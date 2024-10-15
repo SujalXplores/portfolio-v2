@@ -109,7 +109,7 @@ export const DATA = {
       dates: 'Jan 2024 - Feb 2024',
       active: true,
       description:
-        'A Next.js application that uses Google Maps API 📍 to detect whether a location is on water 🌊 or land ⛰️.',
+        'Next.js app using Google Maps API to detect if a location is on water or land. Users can explore terrain types by selecting map points.',
       technologies: [
         'Next.js',
         'Typescript',
@@ -132,38 +132,35 @@ export const DATA = {
       image: '',
       video: '/google-map-water-detection-demo.mp4',
     },
-    // {
-    //   title: 'Magic UI',
-    //   href: 'https://magicui.design',
-    //   dates: 'June 2023 - Present',
-    //   active: true,
-    //   description:
-    //     'Designed, developed and sold animated UI components for developers.',
-    //   technologies: [
-    //     'Next.js',
-    //     'Typescript',
-    //     'PostgreSQL',
-    //     'Prisma',
-    //     'TailwindCSS',
-    //     'Stripe',
-    //     'Shadcn UI',
-    //     'Magic UI',
-    //   ],
-    //   links: [
-    //     {
-    //       type: 'Website',
-    //       href: 'https://magicui.design',
-    //       icon: <Icons.globe className="size-3" />,
-    //     },
-    //     {
-    //       type: 'Source',
-    //       href: 'https://github.com/magicuidesign/magicui',
-    //       icon: <Icons.github className="size-3" />,
-    //     },
-    //   ],
-    //   image: '',
-    //   video: 'https://cdn.magicui.design/bento-grid.mp4',
-    // },
+    {
+      title: 'AI Artistry Studio',
+      href: 'https://ai-artistry-five.vercel.app',
+      dates: 'September 2024 - Present',
+      active: true,
+      description:
+        'Developed an AI-powered image generation platform using DALL-E 3. Users can create unique artworks by inputting text prompts, showcasing the intersection of AI and creativity.',
+      technologies: [
+        'Next.js',
+        'Typescript',
+        'Shadcn UI',
+        'Dall-E 3',
+        'OpenAI API',
+      ],
+      links: [
+        {
+          type: 'Website',
+          href: 'https://ai-artistry-five.vercel.app',
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: 'Source',
+          href: 'https://github.com/SujalXplores/dall-e-3-next-js-template',
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: '/ai-artistry.png',
+      video: '',
+    },
     // {
     //   title: 'llm.report',
     //   href: 'https://llm.report',
