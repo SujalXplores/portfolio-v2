@@ -6,6 +6,8 @@ import React, { PropsWithChildren, useRef } from 'react';
 
 import { cn } from '@/lib/utils';
 
+const MotionDiv = motion.div as any;
+
 export interface DockProps extends VariantProps<typeof dockVariants> {
   className?: string;
   magnification?: number;
@@ -47,15 +49,15 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
     };
 
     return (
-      <motion.div
+      <MotionDiv
         ref={ref}
-        onMouseMove={(e) => mousex.set(e.pageX)}
+        onMouseMove={(e: React.MouseEvent) => mousex.set(e.pageX)}
         onMouseLeave={() => mousex.set(Infinity)}
         {...props}
         className={cn(dockVariants({ className }))}
       >
         {renderChildren()}
-      </motion.div>
+      </MotionDiv>
     );
   }
 );
@@ -99,7 +101,7 @@ const DockIcon = ({
   });
 
   return (
-    <motion.div
+    <MotionDiv
       ref={ref}
       style={{ width }}
       className={cn(
@@ -109,7 +111,7 @@ const DockIcon = ({
       {...props}
     >
       {children}
-    </motion.div>
+    </MotionDiv>
   );
 };
 

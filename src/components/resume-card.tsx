@@ -11,6 +11,8 @@ import { Card, CardHeader } from '@/components/ui/card';
 
 import { cn } from '@/lib/utils';
 
+const MotionDiv = motion.div as any;
+
 interface ResumeCardProps {
   logoUrl: string;
   altText: string;
@@ -90,7 +92,7 @@ export const ResumeCard = ({
             {subtitle && <div className="font-sans text-xs">{subtitle}</div>}
           </CardHeader>
           {description ? (
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, height: 0 }}
               animate={{
                 opacity: isExpanded ? 1 : 0,
@@ -103,7 +105,7 @@ export const ResumeCard = ({
               className="mt-2 text-xs sm:text-sm"
             >
               {description}
-            </motion.div>
+            </MotionDiv>
           ) : null}
         </div>
       </Card>

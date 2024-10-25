@@ -1,9 +1,11 @@
-"use client";
+'use client';
 
-import { AnimatePresence, motion, Variants } from "framer-motion";
-import { useMemo } from "react";
+import { AnimatePresence, motion, Variants } from 'framer-motion';
+import { useMemo } from 'react';
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
+
+const MotionSpan = motion.span as any;
 
 interface BlurFadeTextProps {
   text: string;
@@ -18,6 +20,7 @@ interface BlurFadeTextProps {
   yOffset?: number;
   animateByCharacter?: boolean;
 }
+
 const BlurFadeText = ({
   text,
   className,
@@ -28,8 +31,8 @@ const BlurFadeText = ({
   animateByCharacter = false,
 }: BlurFadeTextProps) => {
   const defaultVariants: Variants = {
-    hidden: { y: yOffset, opacity: 0, filter: "blur(8px)" },
-    visible: { y: -yOffset, opacity: 1, filter: "blur(0px)" },
+    hidden: { y: yOffset, opacity: 0, filter: 'blur(8px)' },
+    visible: { y: -yOffset, opacity: 1, filter: 'blur(0px)' },
   };
   const combinedVariants = variant || defaultVariants;
   const characters = useMemo(() => Array.from(text), [text]);
@@ -39,7 +42,7 @@ const BlurFadeText = ({
       <div className="flex">
         <AnimatePresence>
           {characters.map((char, i) => (
-            <motion.span
+            <MotionSpan
               key={i}
               initial="hidden"
               animate="visible"
@@ -48,13 +51,13 @@ const BlurFadeText = ({
               transition={{
                 yoyo: Infinity,
                 delay: delay + i * characterDelay,
-                ease: "easeOut",
+                ease: 'easeOut',
               }}
-              className={cn("inline-block", className)}
-              style={{ width: char.trim() === "" ? "0.2em" : "auto" }}
+              className={cn('inline-block', className)}
+              style={{ width: char.trim() === '' ? '0.2em' : 'auto' }}
             >
               {char}
-            </motion.span>
+            </MotionSpan>
           ))}
         </AnimatePresence>
       </div>
@@ -64,7 +67,7 @@ const BlurFadeText = ({
   return (
     <div className="flex">
       <AnimatePresence>
-        <motion.span
+        <MotionSpan
           initial="hidden"
           animate="visible"
           exit="hidden"
@@ -72,12 +75,12 @@ const BlurFadeText = ({
           transition={{
             yoyo: Infinity,
             delay,
-            ease: "easeOut",
+            ease: 'easeOut',
           }}
-          className={cn("inline-block", className)}
+          className={cn('inline-block', className)}
         >
           {text}
-        </motion.span>
+        </MotionSpan>
       </AnimatePresence>
     </div>
   );
