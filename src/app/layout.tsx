@@ -10,6 +10,8 @@ import { cn } from '@/lib/utils';
 import './globals.css';
 
 const fontSans = FontSans({
+  preload: true,
+  display: 'swap',
   subsets: ['latin'],
   variable: '--font-sans',
 });
