@@ -12,33 +12,33 @@ const Projects = dynamic(() => import('@/components/projects'));
 const Contact = dynamic(() => import('@/components/contact'));
 
 const SectionSkeleton = () => (
-  <div className="space-y-4">
-    <Skeleton className="h-8 w-1/4" />
-    <Skeleton className="h-24 w-full" />
-    <Skeleton className="h-24 w-full" />
-  </div>
+	<div className="space-y-4">
+		<Skeleton className="h-8 w-1/4" />
+		<Skeleton className="h-24 w-full" />
+		<Skeleton className="h-24 w-full" />
+	</div>
 );
 
 export default function Page() {
-  return (
-    <main className="flex flex-col min-h-[100dvh] space-y-10">
-      <Hero />
-      <About />
-      <Suspense fallback={<SectionSkeleton />}>
-        <WorkExperience />
-      </Suspense>
-      <Suspense fallback={<SectionSkeleton />}>
-        <Education />
-      </Suspense>
-      <Suspense fallback={<SectionSkeleton />}>
-        <Skills />
-      </Suspense>
-      <Suspense fallback={<SectionSkeleton />}>
-        <Projects />
-      </Suspense>
-      <Suspense fallback={<SectionSkeleton />}>
-        <Contact />
-      </Suspense>
-    </main>
-  );
+	return (
+		<main className="flex flex-col min-h-[100dvh] space-y-10">
+			<Hero />
+			<About />
+			<Suspense fallback={<SectionSkeleton />}>
+				<WorkExperience />
+			</Suspense>
+			<Suspense fallback={<SectionSkeleton />}>
+				<Education />
+			</Suspense>
+			<Suspense fallback={<SectionSkeleton />}>
+				<Skills />
+			</Suspense>
+			<Suspense fallback={<SectionSkeleton />}>
+				<Projects />
+			</Suspense>
+			<Suspense fallback={<SectionSkeleton />}>
+				<Contact />
+			</Suspense>
+		</main>
+	);
 }
