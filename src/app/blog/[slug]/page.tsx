@@ -27,7 +27,7 @@ export async function generateMetadata(props: {
 		image,
 	} = post.metadata;
 	const ogImage = image
-		? `${DATA.url}${image}`
+		? `${DATA.url}/${image}`
 		: `${DATA.url}/og?title=${encodeURIComponent(title)}`;
 
 	return {
@@ -83,7 +83,6 @@ export default async function Blog(props: {
 		<section id="blog">
 			<script
 				type="application/ld+json"
-				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(jsonLd),
 				}}
@@ -100,7 +99,6 @@ export default async function Blog(props: {
 			</div>
 			<article
 				className="prose dark:prose-invert"
-				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 				dangerouslySetInnerHTML={{ __html: post.source }}
 			/>
 		</section>
