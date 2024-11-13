@@ -1,10 +1,6 @@
-import BlurFade from '@/components/magicui/blur-fade';
-import BlurFadeText from '@/components/magicui/blur-fade-text';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-
 import { DATA } from '@/data/resume';
-
-const BLUR_FADE_DELAY = 0.04;
+import { shimmer, toBase64 } from '@/lib/utils';
+import Image from 'next/image';
 
 export default function Hero() {
 	return (
@@ -12,28 +8,21 @@ export default function Hero() {
 			<div className="mx-auto w-full max-w-2xl space-y-8">
 				<div className="gap-2 flex justify-between">
 					<div className="flex-col flex flex-1 space-y-1.5">
-						<BlurFadeText
-							delay={BLUR_FADE_DELAY}
-							className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-							yOffset={8}
-							text={`Hi, I'm ${DATA.name.split(' ')[0]} 👋`}
-						/>
-						<BlurFadeText
-							className="max-w-[600px] md:text-xl"
-							delay={BLUR_FADE_DELAY}
-							text={DATA.description}
-						/>
+						<h3 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+							{`Hi, I'm ${DATA.name.split(' ')[0]} 👋`}
+						</h3>
+						<span className="max-w-[600px] md:text-xl">{DATA.description}</span>
 					</div>
-					<BlurFade delay={BLUR_FADE_DELAY}>
-						<Avatar className="size-28 border">
-							<AvatarImage
-								alt={DATA.name}
-								src={DATA.avatarUrl}
-								loading="eager"
-							/>
-							<AvatarFallback>{DATA.initials}</AvatarFallback>
-						</Avatar>
-					</BlurFade>
+					<Image
+						src={DATA.avatarUrl}
+						alt={DATA.name}
+						width={100}
+						height={100}
+						placeholder={`data:image/svg+xml;base64,${toBase64(
+							shimmer(100, 100),
+						)}`}
+						className="rounded-full size-28 border"
+					/>
 				</div>
 			</div>
 		</section>

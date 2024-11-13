@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" id="color-picker">
+  <defs>
+    <linearGradient id="b" x1="22" x2="36.85" y1="40.04" y2="40.04" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fe9661"></stop>
+      <stop offset="1" stop-color="#ffb369"></stop>
+    </linearGradient>
+    <linearGradient id="a" x1="7.96" x2="7.96" y1="26" y2="11.15" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#54a5ff"></stop>
+      <stop offset="1" stop-color="#8ad3fe"></stop>
+    </linearGradient>
+    <linearGradient xlink:href="#a" id="c" x1="21.63" x2="32.4" y1="29.85" y2="13.89"></linearGradient>
+    <linearGradient xlink:href="#b" id="d" x1="38.5" x2="45.55" y1="9.5" y2="2.45"></linearGradient>
+    <linearGradient xlink:href="#b" id="e" x1="35" x2="39" y1="13" y2="9" gradientTransform="rotate(45 37.001 11.006)"></linearGradient>
+    <linearGradient xlink:href="#b" id="f" x1="25" x2="19" y1="36" y2="36"></linearGradient>
+  </defs>
+  <g>
+    <path fill="#fe9661" d="M43,26a20.93,20.93,0,0,1-6.15,14.85l-7.78-7.78A10,10,0,0,0,32,26Z"></path>
+    <path fill="#eb7f58" d="M43,26H32a10,10,0,0,0-2.93-7.07l7.78-7.78A20.93,20.93,0,0,1,43,26Z"></path>
+    <path fill="#ffb369" d="M22,36V47A20.93,20.93,0,0,1,7.15,40.85l7.78-7.78A10,10,0,0,0,22,36Z"></path>
+    <path fill="url(#b)" d="M36.85,40.85A20.93,20.93,0,0,1,22,47V36a10,10,0,0,0,7.07-2.93Z"></path>
+    <path fill="#8ad3fe" d="M14.93,33.07,7.15,40.85A20.93,20.93,0,0,1,1,26H12A10,10,0,0,0,14.93,33.07Z"></path>
+    <path fill="url(#a)" d="M14.93,18.93A10,10,0,0,0,12,26H1A20.93,20.93,0,0,1,7.15,11.15Z"></path>
+    <path fill="#54a5ff" d="M22,5V16a10,10,0,0,0-7.07,2.93L7.15,11.15A20.93,20.93,0,0,1,22,5Z"></path>
+    <path fill="#4795ea" d="M36.85,11.15l-7.78,7.78A10,10,0,0,0,22,16V5A20.93,20.93,0,0,1,36.85,11.15Z"></path>
+    <rect width="9.9" height="8.49" x="26.55" y="12.26" fill="#d7e9f7" transform="rotate(-45 31.505 16.5)"></rect>
+    <path fill="url(#c)" d="M21,21a4.25,4.25,0,0,0-1,4.29A2,2,0,1,0,22.71,28,4.23,4.23,0,0,0,27,27L37,17l-1.66.33a16.49,16.49,0,0,1-6.68,0A17.59,17.59,0,0,0,25,17Z"></path>
+    <path fill="url(#d)" d="M47,6a5,5,0,0,1-1.45,3.5L42,13,35,6l3.55-3.55A5,5,0,0,1,47,6Z"></path>
+    <rect width="5.66" height="14.14" x="34.17" y="3.93" fill="url(#e)" rx="1" transform="rotate(-45 36.995 10.996)"></rect>
+    <circle cx="22" cy="36" r="5" fill="#f0f7fc"></circle>
+    <circle cx="22" cy="36" r="3" fill="url(#f)"></circle>
+  </g>
+</svg>

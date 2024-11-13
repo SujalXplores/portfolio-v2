@@ -4,12 +4,12 @@ import { ChevronRightIcon } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardHeader } from '@/components/ui/card';
 
 import { MotionDiv } from '@/lib/types';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 interface ResumeCardProps {
 	logoUrl: string;
@@ -49,14 +49,13 @@ export const ResumeCard = ({
 		>
 			<Card className="flex">
 				<div className="flex-none">
-					<Avatar className="border size-12 m-auto bg-muted-background dark:bg-foreground">
-						<AvatarImage
-							src={logoUrl}
-							alt={altText}
-							className="object-contain"
-						/>
-						<AvatarFallback>{altText[0]}</AvatarFallback>
-					</Avatar>
+					<Image
+						src={logoUrl}
+						alt={altText}
+						width={48}
+						height={48}
+						className="object-contain border size-12 m-auto bg-muted-background dark:bg-foreground rounded-full"
+					/>
 				</div>
 				<div className="flex-grow ml-4 items-center flex-col group">
 					<CardHeader className="gap-y-2">

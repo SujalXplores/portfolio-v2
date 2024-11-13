@@ -55,14 +55,14 @@ export const metadata: Metadata = {
 	applicationName: 'Next.js',
 	referrer: 'origin-when-cross-origin',
 	keywords: [
-		'Sujal Shah',
+		DATA.name,
 		'JavaScript',
 		'TypeScript',
 		'Next.js',
 		'Vercel',
 		'React',
 	],
-	creator: 'Sujal Shah',
+	creator: DATA.name,
 	alternates: {
 		canonical: '/',
 	},

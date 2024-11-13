@@ -75,6 +75,10 @@
 	}
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	text-rendering: optimizeLegibility;
 }

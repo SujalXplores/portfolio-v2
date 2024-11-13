@@ -12,7 +12,7 @@ import {
 	CardTitle,
 } from '@/components/ui/card';
 
-import { cn } from '@/lib/utils';
+import { cn, shimmer, toBase64 } from '@/lib/utils';
 
 type ProjectLink = {
 	id: number;
@@ -84,6 +84,7 @@ const Media = ({ video, image, title, href }: MediaProps) => {
 				width={500}
 				height={300}
 				className="h-40 w-full overflow-hidden object-cover object-top"
+				placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(500, 300))}`}
 			/>
 		);
 	}
