@@ -5,11 +5,21 @@ import About from '@/components/about';
 import Hero from '@/components/hero';
 import { Skeleton } from '@/components/ui/skeleton';
 
-const WorkExperience = dynamic(() => import('@/components/work-experience'));
-const Education = dynamic(() => import('@/components/education'));
-const Skills = dynamic(() => import('@/components/skills'));
-const Projects = dynamic(() => import('@/components/projects'));
-const Contact = dynamic(() => import('@/components/contact'));
+const WorkExperience = dynamic(() => import('@/components/work-experience'), {
+	ssr: true,
+});
+const Education = dynamic(() => import('@/components/education'), {
+	ssr: true,
+});
+const Skills = dynamic(() => import('@/components/skills'), {
+	ssr: true,
+});
+const Projects = dynamic(() => import('@/components/projects'), {
+	ssr: true,
+});
+const Contact = dynamic(() => import('@/components/contact'), {
+	ssr: true,
+});
 
 const SectionSkeleton = () => (
 	<div className="space-y-4">
