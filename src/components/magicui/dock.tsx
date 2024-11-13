@@ -7,7 +7,7 @@ import React, { type PropsWithChildren, useRef } from 'react';
 import { MotionDiv } from '@/lib/types';
 import { cn } from '@/lib/utils';
 
-export interface DockProps extends VariantProps<typeof dockVariants> {
+interface DockProps extends VariantProps<typeof dockVariants> {
 	className?: string;
 	magnification?: number;
 	distance?: number;
@@ -63,7 +63,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
 
 Dock.displayName = 'Dock';
 
-export interface DockIconProps {
+interface DockIconProps {
 	magnification?: number;
 	distance?: number;
 	mousex?: any;
@@ -116,4 +116,4 @@ const DockIcon = ({
 
 DockIcon.displayName = 'DockIcon';
 
-export { Dock, DockIcon, dockVariants };
+export { Dock, DockIcon };
