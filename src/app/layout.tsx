@@ -23,7 +23,8 @@ export const metadata: Metadata = {
 		template: `%s | ${DATA.name}`,
 	},
 	publisher: 'Vercel',
-	description: `${DATA.description} Specializing in React, TypeScript, and Next.js development.`,
+	description:
+		"Innovative Software Engineer crafting cutting-edge web experiences with React, TypeScript, and Next.js. Let's build something amazing together! 🚀",
 	openGraph: {
 		title: `${DATA.name}`,
 		description: DATA.description,
