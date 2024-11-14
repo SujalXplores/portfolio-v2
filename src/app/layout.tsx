@@ -11,7 +11,7 @@ import './globals.css';
 
 const fontSans = FontSans({
 	preload: true,
-	display: 'swap',
+	display: 'optional',
 	subsets: ['latin'],
 	variable: '--font-sans',
 });
@@ -19,11 +19,11 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
 	metadataBase: new URL(DATA.url),
 	title: {
-		default: DATA.name,
+		default: `${DATA.name} - Software Engineer & Web Developer`,
 		template: `%s | ${DATA.name}`,
 	},
 	publisher: 'Vercel',
-	description: DATA.description,
+	description: `${DATA.description} Specializing in React, TypeScript, and Next.js development.`,
 	openGraph: {
 		title: `${DATA.name}`,
 		description: DATA.description,
