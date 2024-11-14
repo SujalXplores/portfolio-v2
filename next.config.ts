@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
 		optimizeCss: true,
 		cssChunking: 'loose',
 	},
+	poweredByHeader: false,
 };
 
 export default nextConfig;

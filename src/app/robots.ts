@@ -3,6 +3,8 @@ export default function robots() {
 		rules: [
 			{
 				userAgent: '*',
+				allow: '/',
+				disallow: ['/api/*', '/_next/*', '/static/*'],
 			},
 		],
 		sitemap: 'https://sujal.vercel.app/sitemap.xml',

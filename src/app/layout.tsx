@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter as FontSans } from 'next/font/google';
 
 import Navbar from '@/components/navbar';
@@ -7,14 +7,22 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 
 import { DATA } from '@/data/resume';
 import { cn } from '@/lib/utils';
+
 import './globals.css';
 
 const fontSans = FontSans({
 	preload: true,
-	display: 'optional',
+	display: 'swap',
 	subsets: ['latin'],
 	variable: '--font-sans',
+	fallback: ['system-ui', 'arial'],
+	adjustFontFallback: true,
 });
+
+export const viewport: Viewport = {
+	themeColor: 'black',
+	colorScheme: 'light dark',
+};
 
 export const metadata: Metadata = {
 	metadataBase: new URL(DATA.url),
@@ -28,7 +36,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: `${DATA.name}`,
 		description: DATA.description,
-		url: DATA.url,
+		url: `${DATA.url}/og-bg.png`,
 		siteName: `${DATA.name}`,
 		locale: 'en_US',
 		type: 'website',
@@ -66,6 +74,17 @@ export const metadata: Metadata = {
 	creator: DATA.name,
 	alternates: {
 		canonical: '/',
+	},
+	authors: [{ name: DATA.name, url: DATA.url }],
+	category: 'Technology',
+	colorScheme: 'light dark',
+	formatDetection: {
+		telephone: false,
+		address: false,
+		email: false,
+	},
+	icons: {
+		icon: '/favicon.ico',
 	},
 };
 

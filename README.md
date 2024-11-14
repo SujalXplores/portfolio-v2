@@ -2,6 +2,8 @@
 
 A modern, responsive portfolio and blog template built with Next.js 15, React, TypeScript, and TailwindCSS. Features a sleek design with smooth animations, dark mode support, and optimized performance.
 
+<img src="./banner.png" alt="banner" />
+
 ![Next.js](https://img.shields.io/badge/Next.js-15-black)
 ![React](https://img.shields.io/badge/React-19-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue)
