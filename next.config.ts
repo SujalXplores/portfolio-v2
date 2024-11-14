@@ -6,7 +6,6 @@ const nextConfig: NextConfig = {
 	experimental: {
 		reactCompiler: true,
 		optimizeCss: true,
-		useLightningcss: true,
 		cssChunking: 'loose',
 	},
 };
