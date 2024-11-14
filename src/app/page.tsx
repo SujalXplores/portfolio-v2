@@ -7,15 +7,15 @@ import Skills from '@/components/skills';
 import WorkExperience from '@/components/work-experience';
 
 export default function Page() {
-	return (
-		<main className="flex flex-col min-h-[100dvh] space-y-10">
-			<Hero />
-			<About />
-			<WorkExperience />
-			<Education />
-			<Skills />
-			<Projects />
-			<Contact />
-		</main>
-	);
+  return (
+    <main className="flex flex-col min-h-[100dvh] space-y-10">
+      <Hero />
+      <About />
+      <WorkExperience />
+      <Education />
+      <Skills />
+      <Projects />
+      <Contact />
+    </main>
+  );
 }
