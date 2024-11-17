@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter as FontSans } from 'next/font/google';
+import type { ReactNode } from 'react';
 
 import Navbar from '@/components/navbar';
 import { ThemeProvider } from '@/components/theme-provider';
@@ -40,6 +41,13 @@ export const metadata: Metadata = {
     siteName: `${DATA.name}`,
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: `${DATA.url}/og-bg.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
   robots: {
     index: true,
@@ -77,21 +85,17 @@ export const metadata: Metadata = {
   },
   authors: [{ name: DATA.name, url: DATA.url }],
   category: 'Technology',
-  colorScheme: 'light dark',
   formatDetection: {
     telephone: false,
     address: false,
     email: false,
-  },
-  icons: {
-    icon: '/favicon.ico',
   },
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
