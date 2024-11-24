@@ -12,7 +12,7 @@ export const DATA = {
   description: `Innovative Software Engineer with ${experience}+ years crafting cutting-edge web solutions. Passionate about pushing technological boundaries.`,
   summary:
     "As a passionate software engineer, I specialize in crafting exceptional and innovative digital experiences. My expertise lies in building robust, accessible, and human-centered products that make a real impact. Currently, I'm leveraging my skills to create cutting-edge solutions at [ZURU](https://zuru.tech), where I continue to push the boundaries of what's possible in tech.",
-  avatarUrl: '/me.png',
+  avatarUrl: '/images/me.png',
   skills: [
     'React',
     'Next.js',
@@ -63,7 +63,7 @@ export const DATA = {
       href: 'https://zuru.tech',
       location: 'On-site',
       title: 'Software Engineer - 2',
-      logoUrl: '/zuru.png',
+      logoUrl: '/images/zuru.png',
       start: 'January 2022',
       end: 'Present',
       description:
@@ -75,7 +75,7 @@ export const DATA = {
       badges: [],
       location: 'Remote',
       title: 'Freelance contractor',
-      logoUrl: '/walmart.png',
+      logoUrl: '/images/walmart.png',
       start: 'May 2021',
       end: 'October 2024',
       description:
@@ -88,7 +88,7 @@ export const DATA = {
       href: 'https://www.gujaratuniversity.ac.in',
       degree:
         'Master of Computer Applications & Information Technology (Msc CA & IT)',
-      logoUrl: '/gujarat-university.png',
+      logoUrl: '/images/gujarat-university.png',
       start: '2020',
       end: '2022',
     },
@@ -97,7 +97,7 @@ export const DATA = {
       href: 'https://www.gujaratuniversity.ac.in',
       degree:
         'Bachelor of Computer Applications & Information Technology (Bsc CA & IT)',
-      logoUrl: '/gujarat-university.png',
+      logoUrl: '/images/gujarat-university.png',
       start: '2017',
       end: '2020',
     },
@@ -132,7 +132,7 @@ export const DATA = {
         },
       ],
       image: '',
-      video: '/google-map-water-detection-demo.mp4',
+      video: '/videos/google-map-water-detection-demo.mp4',
     },
     {
       title: 'AI Artistry Studio',
@@ -162,7 +162,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: '/ai-artistry.png',
+      image: '/images/ai-artistry.png',
       video: '',
     },
     // {
