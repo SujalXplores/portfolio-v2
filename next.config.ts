@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
     reactCompiler: true,
     optimizeCss: true,
     cssChunking: 'loose',
+    inlineCss: true,
   },
   poweredByHeader: false,
   eslint: {

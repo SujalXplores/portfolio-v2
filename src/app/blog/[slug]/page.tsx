@@ -29,7 +29,7 @@ export async function generateMetadata(props: {
   } = post.metadata;
 
   const ogImage = image
-    ? `${DATA.url}/${image}.png`
+    ? `${DATA.url}/images/${image}.png`
     : `${DATA.url}/og?title=${encodeURIComponent(title)}`;
 
   return {

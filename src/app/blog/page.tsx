@@ -61,7 +61,7 @@ export default async function BlogPage() {
               <div className="absolute -left-16 top-2 flex items-center justify-center bg-background rounded-full">
                 <Avatar className="border size-12 m-auto flex items-center justify-center">
                   <AvatarImage
-                    src={`${post.metadata.image}.svg`}
+                    src={`/svgs/${post.metadata.image}.svg`}
                     alt={post.metadata.title}
                     className="object-cover w-6 h-6"
                   />
