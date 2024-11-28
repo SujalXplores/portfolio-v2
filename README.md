@@ -20,6 +20,7 @@ A modern, responsive portfolio and blog template built with Next.js 15, React, T
 - ⚡️ Optimized for Next.js and Vercel deployment
 - 🔍 SEO optimized
 - 🎯 Easy customization through a single config file
+- 🔒 Best in class security features to protect your site from XSS attacks and other code injection risks
 
 ## 🚀 Quick Start
 
@@ -72,6 +73,17 @@ image: 'category'
 - [Magic UI](https://magicui.design/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [MDX](https://mdxjs.com/)
+
+## 📦️ Security Features
+
+The template comes with built-in security features:
+
+- **Content Security Policy (CSP)**: Prevents XSS attacks and other code injection risks
+- **Security Headers**:
+  - `X-Content-Type-Options`: Prevents MIME type sniffing
+  - `X-Frame-Options`: Protects against clickjacking
+  - `Referrer-Policy`: Controls how much referrer information is shared
+  - `upgrade-insecure-requests`: Upgrades HTTP requests to HTTPS
 
 ## 📦 Project Structure
 

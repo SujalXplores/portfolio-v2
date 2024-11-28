@@ -1,8 +1,20 @@
-import { MDXRemote } from 'next-mdx-remote/rsc';
+import { MDXRemote, type MDXRemoteProps } from 'next-mdx-remote/rsc';
 import Image from 'next/image';
 import Link from 'next/link';
 import { type ReactNode, createElement } from 'react';
 import { highlight } from 'sugar-high';
+
+interface CalloutProps {
+  emoji: string;
+  children: ReactNode;
+}
+
+interface CodeBlockProps {
+  children: string;
+  language?: string;
+  filename?: string;
+  showLineNumbers?: boolean;
+}
 
 function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
   const headers = data.headers.map((header, index) => (
@@ -86,11 +98,11 @@ function createHeading(level: number) {
   return Heading;
 }
 
-function Callout(props: any) {
+function Callout({ emoji, children }: CalloutProps) {
   return (
     <div className="px-4 py-3 border border-neutral-700 bg-neutral-800 rounded p-1 text-sm flex items-center text-neutral-100 mb-8">
-      <div className="flex items-center w-4 mr-4">{props.emoji}</div>
-      <div className="w-full callout">{props.children}</div>
+      <div className="flex items-center w-4 mr-4">{emoji}</div>
+      <div className="w-full callout">{children}</div>
     </div>
   );
 }
@@ -151,7 +163,7 @@ function ConsCard({ title, cons }: { title: string; cons: string[] }) {
   );
 }
 
-function Code({ children, ...props }: { children: string }) {
+function Code({ children, ...props }: CodeBlockProps) {
   const codeHTML = highlight(children);
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }
@@ -172,7 +184,7 @@ const components = {
   Table,
 };
 
-export function CustomMDX(props: any) {
+export function CustomMDX(props: MDXRemoteProps) {
   return (
     <MDXRemote
       {...props}

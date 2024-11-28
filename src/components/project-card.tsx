@@ -83,8 +83,12 @@ const Media = ({ video, image, title, href }: MediaProps) => {
         alt={`Project image for ${title}`}
         width={500}
         height={300}
+        loading="lazy"
         className="h-40 w-full overflow-hidden object-cover object-top"
-        placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(500, 300))}`}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        quality={75}
+        placeholder="blur"
+        blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(500, 300))}`}
       />
     );
   }
