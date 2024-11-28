@@ -1,51 +1,69 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import matter from 'gray-matter';
-import rehypePrettyCode from 'rehype-pretty-code';
-import rehypeStringify from 'rehype-stringify';
-import remarkParse from 'remark-parse';
-import remarkRehype from 'remark-rehype';
-import { unified } from 'unified';
+type Metadata = {
+  title: string;
+  publishedAt: string;
+  summary: string;
+  image?: string;
+};
 
-const contentDir = path.join(process.cwd(), 'content');
+function parseFrontmatter(fileContent: string) {
+  const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
+  const match = frontmatterRegex.exec(fileContent);
+  if (!match) throw new Error('No frontmatter found');
+  const frontMatterBlock = match[1];
+  const content = fileContent.replace(frontmatterRegex, '').trim();
+  const frontMatterLines = frontMatterBlock.trim().split('\n');
+  const metadata: Partial<Metadata> = {};
 
-export async function markdownToHTML(markdown: string) {
-  const p = await unified()
-    .use(remarkParse)
-    .use(remarkRehype)
-    .use(rehypePrettyCode, {
-      // https://rehype-pretty.pages.dev/#usage
-      theme: {
-        light: 'min-light',
-        dark: 'min-dark',
-      },
-      keepBackground: false,
-    })
-    .use(rehypeStringify)
-    .process(markdown);
+  for (const line of frontMatterLines) {
+    const [key, ...valueArr] = line.split(': ');
+    let value = valueArr.join(': ').trim();
+    value = value.replace(/^['"](.*)['"]$/, '$1'); // Remove quotes
+    metadata[key.trim() as keyof Metadata] = value;
+  }
 
-  return p.toString();
+  return { metadata: metadata as Metadata, content };
 }
 
-export async function getPost(slug: string) {
-  const filePath = path.join(contentDir, `${slug}.mdx`);
-  const source = fs.readFileSync(filePath, 'utf-8');
-  const { content: rawContent, data: metadata } = matter(source);
-  const content = await markdownToHTML(rawContent);
-  return { source: content, metadata, slug };
+function getMDXFiles(dir: string) {
+  return fs.readdirSync(dir).filter((file) => path.extname(file) === '.mdx');
 }
 
-async function getAllPosts() {
-  const mdxFiles = fs
-    .readdirSync(contentDir)
-    .filter((file) => path.extname(file) === '.mdx');
-  return Promise.all(
-    mdxFiles.map(async (file) => {
-      const slug = path.basename(file, path.extname(file));
-      return getPost(slug);
-    }),
+function readMDXFile(filePath: string) {
+  const rawContent = fs.readFileSync(filePath, 'utf-8');
+  return parseFrontmatter(rawContent);
+}
+
+function extractTweetIds(content: string) {
+  const tweetMatches = content.match(/<StaticTweet\sid="[0-9]+"\s\/>/g);
+  return tweetMatches?.map((tweet) => tweet.match(/[0-9]+/g)?.[0] || '') || [];
+}
+
+function getMDXData(dir: string) {
+  const mdxFiles = getMDXFiles(dir);
+  return mdxFiles.map((file) => {
+    const { metadata, content, ...rest } = readMDXFile(path.join(dir, file));
+    const slug = path.basename(file, path.extname(file));
+    const tweetIds = extractTweetIds(content);
+    return {
+      metadata,
+      slug,
+      tweetIds,
+      content,
+    };
+  });
+}
+
+function getBlogPosts() {
+  return getMDXData(path.join(process.cwd(), 'content'));
+}
+
+function getPost(slug: string) {
+  return getMDXData(path.join(process.cwd(), 'content')).find(
+    (post) => post.slug === slug,
   );
 }
 
-export const getBlogPosts = getAllPosts;
+export { getBlogPosts, getPost };

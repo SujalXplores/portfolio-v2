@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 
+import { CustomMDX } from '@/components/mdx';
 import { getBlogPosts, getPost } from '@/data/blog';
 import { DATA } from '@/data/resume';
 import { formatDate } from '@/lib/utils';
@@ -98,10 +99,9 @@ export default async function Blog(props: {
           </p>
         </Suspense>
       </div>
-      <article
-        className="prose dark:prose-invert"
-        dangerouslySetInnerHTML={{ __html: post.source }}
-      />
+      <article className="prose dark:prose-invert">
+        <CustomMDX source={post.content} />
+      </article>
     </section>
   );
 }
