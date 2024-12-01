@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
   experimental: {
     reactCompiler: true,
     optimizeCss: true,
-    cssChunking: 'loose',
+    cssChunking: true,
     inlineCss: true,
   },
   poweredByHeader: false,
