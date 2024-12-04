@@ -61,9 +61,7 @@ function getBlogPosts() {
 }
 
 function getPost(slug: string) {
-  return getMDXData(path.join(process.cwd(), 'content')).find(
-    (post) => post.slug === slug,
-  );
+  return getBlogPosts().find((post) => post.slug === slug);
 }
 
 export { getBlogPosts, getPost };

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default async function BlogPage() {
-  const posts = await getBlogPosts();
+  const posts = getBlogPosts();
 
   // Sort posts by publishedAt date in descending order
   const sortedPosts = posts.sort(
