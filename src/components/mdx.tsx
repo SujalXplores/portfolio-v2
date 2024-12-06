@@ -109,8 +109,8 @@ function Callout({ emoji, children }: CalloutProps) {
 
 function ProsCard({ title, pros }: { title: string; pros: string[] }) {
   return (
-    <div className="border border-emerald-900 bg-neutral-900 rounded-xl p-6 my-4 w-full">
-      <span>{`You might use ${title} if...`}</span>
+    <div className="border border-emerald-200 dark:border-emerald-900 bg-emerald-50 dark:bg-neutral-900 rounded-xl p-6 my-4 w-full">
+      <span className="text-neutral-900 dark:text-neutral-100">{`You might use ${title} if...`}</span>
       <div className="mt-4">
         {pros.map((pro: string) => (
           <div key={pro} className="flex font-medium items-baseline mb-2">
@@ -129,7 +129,9 @@ function ProsCard({ title, pros }: { title: string; pros: string[] }) {
                 </g>
               </svg>
             </div>
-            <span>{pro}</span>
+            <span className="text-neutral-900 dark:text-neutral-100">
+              {pro}
+            </span>
           </div>
         ))}
       </div>
@@ -139,8 +141,8 @@ function ProsCard({ title, pros }: { title: string; pros: string[] }) {
 
 function ConsCard({ title, cons }: { title: string; cons: string[] }) {
   return (
-    <div className="border border-red-900 bg-neutral-900 rounded-xl p-6 my-6 w-full">
-      <span>{`You might not use ${title} if...`}</span>
+    <div className="border border-red-200 dark:border-red-900 bg-red-50 dark:bg-neutral-900 rounded-xl p-6 my-6 w-full">
+      <span className="text-neutral-900 dark:text-neutral-100">{`You might not use ${title} if...`}</span>
       <div className="mt-4">
         {cons.map((con) => (
           <div key={con} className="flex font-medium items-baseline mb-2">
@@ -155,7 +157,9 @@ function ConsCard({ title, cons }: { title: string; cons: string[] }) {
                 <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
               </svg>
             </div>
-            <span>{con}</span>
+            <span className="text-neutral-900 dark:text-neutral-100">
+              {con}
+            </span>
           </div>
         ))}
       </div>
