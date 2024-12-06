@@ -1,9 +1,11 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "author": {
-    "name": "Sujal Shah"
+    "name": "Sujal Shah",
+    "email": "sujal.shah.dev@gmail.com",
+    "url": "https://sujal.vercel.app"
   },
   "scripts": {
     "dev": "next dev --turbo",
@@ -22,9 +24,9 @@
     "@radix-ui/react-tooltip": "1.1.4",
     "class-variance-authority": "0.7.1",
     "critters": "0.0.25",
-    "framer-motion": "11.13.1",
     "gray-matter": "4.0.3",
     "lucide-react": "0.468.0",
+    "motion": "12.0.0-alpha.2",
     "next": "15.0.4-canary.45",
     "next-mdx-remote": "5.0.0",
     "next-themes": "0.4.4",
@@ -43,8 +45,8 @@
     "@tailwindcss/typography": "0.5.15",
     "@types/mdx": "2.0.13",
     "@types/node": "22.10.1",
-    "@types/react": "19.0.0",
-    "@types/react-dom": "19.0.0",
+    "@types/react": "19.0.1",
+    "@types/react-dom": "19.0.1",
     "autoprefixer": "10.4.20",
     "babel-plugin-react-compiler": "19.0.0-beta-df7b47d-20241124",
     "clsx": "2.1.1",
@@ -56,5 +58,10 @@
     "tailwindcss-animate": "1.0.7",
     "typescript": "5.7.2"
   },
-  "browserslist": "defaults"
+  "browserslist": "defaults",
+  "engines": {
+    "node": ">=23.3.0",
+    "vscode": "^1.93.1",
+    "pnpm": "9.12.1"
+  }
 }
