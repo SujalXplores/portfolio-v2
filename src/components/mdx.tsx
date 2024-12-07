@@ -2,7 +2,12 @@ import { MDXRemote, type MDXRemoteProps } from 'next-mdx-remote/rsc';
 import Image from 'next/image';
 import Link from 'next/link';
 import { type ReactNode, createElement } from 'react';
-import { highlight } from 'sugar-high';
+import { createHighlighter } from 'shiki';
+
+const highlighter = createHighlighter({
+  themes: ['dark-plus'],
+  langs: ['javascript', 'css', 'html', 'jsx'],
+});
 
 interface CalloutProps {
   emoji: string;
@@ -11,6 +16,7 @@ interface CalloutProps {
 
 interface CodeBlockProps {
   children: string;
+  className?: string;
   language?: string;
   filename?: string;
   showLineNumbers?: boolean;
@@ -167,9 +173,16 @@ function ConsCard({ title, cons }: { title: string; cons: string[] }) {
   );
 }
 
-function Code({ children, ...props }: CodeBlockProps) {
-  const codeHTML = highlight(children);
-  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
+async function Code({ children, ...props }: CodeBlockProps) {
+  const { className } = props;
+  const codeHTML = (await highlighter).codeToHtml(children as string, {
+    lang: className?.replace('language-', '') ?? 'javascript',
+    theme: 'dark-plus',
+  });
+
+  const codeContent = codeHTML.match(/<code[^>]*>([\s\S]*)<\/code>/)?.[1] || '';
+
+  return <code dangerouslySetInnerHTML={{ __html: codeContent }} {...props} />;
 }
 
 const components = {
