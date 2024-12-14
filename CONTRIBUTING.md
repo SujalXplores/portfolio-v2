@@ -1,4 +1,4 @@
-# Contributing to [Your Project Name]
+# Contributing to Portfolio
 
 We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
 
@@ -45,7 +45,7 @@ We use GitHub issues to track public bugs. Report a bug by [opening a new issue]
 * You can try running `npm run lint` for style unification
 
 ## License
-By contributing, you agree that your contributions will be licensed under its [Your License] License.
+By contributing, you agree that your contributions will be licensed under its [MIT License](LICENSE).
 
 ## References
 This document was adapted from the open-source contribution guidelines for [Facebook's Draft](https://github.com/facebook/draft-js/blob/master/CONTRIBUTING.md)
