@@ -1,4 +1,4 @@
-import { HomeIcon, NotebookIcon } from 'lucide-react';
+import { HomeIcon, NotebookIcon, TrophyIcon } from 'lucide-react';
 
 import { Icons } from '@/components/icons';
 
@@ -27,6 +27,7 @@ export const DATA = {
   navbar: [
     { href: '/', icon: HomeIcon, label: 'Home' },
     { href: '/blog', icon: NotebookIcon, label: 'Blog' },
+    { href: '/hackathons', icon: TrophyIcon, label: 'Hackathons' },
   ],
   contact: {
     social: {
@@ -229,3 +230,65 @@ export const DATA = {
     // },
   ],
 } as const;
+
+export const HACKATHONS = [
+  {
+    id: 0,
+    title: 'Google Chrome Built-in AI Challenge',
+    dates: 'October 1st - December 4th, 2024',
+    location: 'Remote',
+    description:
+      'Developed a Chrome extension that leverages AI to enhance user experience by providing real-time translations, summaries, and more directly within the browser.',
+    image: '/svgs/hackathons/chrome.svg',
+    links: [
+      {
+        title: 'Devpost',
+        icon: <Icons.globe className="h-4 w-4" />,
+        href: 'https://devpost.com/software/ansopedia-8uvh4m',
+      },
+      {
+        title: 'Source',
+        icon: <Icons.github className="h-4 w-4" />,
+        href: 'https://github.com/ansopedia/creator-studio',
+      },
+    ],
+  },
+  {
+    id: 1,
+    title: 'Neuro Nostalgia',
+    dates: 'December 13th - 16th, 2024',
+    location: 'Remote',
+    description:
+      'Won 1st place in a 72-hour hackathon by developing an innovative AI-powered web transformation tool that converts modern websites into authentic 90s-style designs while preserving core functionality. Implemented advanced analysis of HTML/CSS structures, automated layout transformations, and period-appropriate styling conversions. The solution demonstrated technical excellence in maintaining functionality while accurately recreating the nostalgic 90s web aesthetic.',
+    image: '/svgs/hackathons/neuro-nostalgia.svg',
+    links: [
+      {
+        title: 'Source',
+        icon: <Icons.github className="h-4 w-4" />,
+        href: 'https://github.com/sanjaysah101/neuro-nostalgia',
+      },
+    ],
+    win: '1st Place Winner 🏆',
+  },
+  {
+    id: 2,
+    title: 'Peerlist Hackathon',
+    dates: 'December 17th - 21st, 2024',
+    location: 'Remote',
+    description:
+      'Developed a Chrome extension that leverages AI to enhance user experience by providing real-time translations, summaries, and more directly within the browser.',
+    image: '/svgs/hackathons/peerlist.svg',
+    links: [
+      {
+        title: 'Peerlist',
+        icon: <Icons.globe className="h-4 w-4" />,
+        href: 'https://peerlist.io/sujalshah/project/v0-opensource-alternative',
+      },
+      {
+        title: 'Source',
+        icon: <Icons.github className="h-4 w-4" />,
+        href: 'https://github.com/SujalXplores/v0.diy',
+      },
+    ],
+  },
+] as const;
