@@ -2,8 +2,6 @@ import { ResumeCard } from '@/components/resume-card';
 
 import { DATA } from '@/data/resume';
 
-const BLUR_FADE_DELAY = 0.04;
-
 export default function Education() {
   return (
     <section id="education">
