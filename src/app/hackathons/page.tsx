@@ -72,12 +72,12 @@ export default function HackathonsPage() {
                 <time className="text-xs text-muted-foreground">
                   {hackathon.dates} • {hackathon.location}
                 </time>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <h2 className="font-semibold leading-none">
                     {hackathon.title}
                   </h2>
                   {hackathon.win && (
-                    <span className="text-xs bg-primary/5 text-primary px-2.5 py-0.5 rounded-full font-medium ring-1 ring-primary/20">
+                    <span className="inline-flex text-xs bg-primary/5 text-primary px-2 py-0.5 rounded-full font-medium ring-1 ring-primary/20 whitespace-nowrap">
                       {hackathon.win}
                     </span>
                   )}

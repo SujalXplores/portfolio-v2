@@ -259,7 +259,7 @@ export const HACKATHONS = [
     dates: 'December 13th - 16th, 2024',
     location: 'Remote',
     description:
-      'Won 1st place in a 72-hour hackathon by developing an innovative AI-powered web transformation tool that converts modern websites into authentic 90s-style designs while preserving core functionality. Implemented advanced analysis of HTML/CSS structures, automated layout transformations, and period-appropriate styling conversions. The solution demonstrated technical excellence in maintaining functionality while accurately recreating the nostalgic 90s web aesthetic.',
+      'Won 1st place for developing an AI-powered tool that transforms modern websites into authentic 90s-style designs. The solution preserves core functionality while implementing automated layout transformations and period-appropriate styling to recreate the nostalgic 90s web aesthetic.',
     image: '/svgs/hackathons/neuro-nostalgia.svg',
     links: [
       {
