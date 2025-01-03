@@ -276,7 +276,7 @@ export const HACKATHONS = [
     dates: 'December 17th - 21st, 2024',
     location: 'Remote',
     description:
-      'Developed a Chrome extension that leverages AI to enhance user experience by providing real-time translations, summaries, and more directly within the browser.',
+      'Developed v0.diy, an open-source alternative to v0.dev, that helps developers generate UI components and layouts for web projects using AI. The tool streamlines the frontend development process by converting text descriptions into ready-to-use React components.',
     image: '/svgs/hackathons/peerlist.svg',
     links: [
       {

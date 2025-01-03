@@ -5,7 +5,7 @@ import { type ReactNode, createElement } from 'react';
 import { createHighlighter } from 'shiki';
 
 const highlighter = createHighlighter({
-  themes: ['dark-plus'],
+  themes: ['github-dark-default'],
   langs: ['javascript', 'css', 'html', 'jsx'],
 });
 
@@ -84,16 +84,28 @@ function slugify(str: string) {
 function createHeading(level: number) {
   const Heading = ({ children }: { children: ReactNode }) => {
     const slug = slugify(children as string);
+    const headingText = children as string;
 
     return createElement(
       `h${level}`,
       { id: slug },
       [
-        createElement('a', {
-          href: `#${slug}`,
-          key: `link-${slug}`,
-          className: 'anchor',
-        }),
+        createElement(
+          'a',
+          {
+            href: `#${slug}`,
+            key: `link-${slug}`,
+            className: 'anchor',
+            'aria-label': `Link to section: ${headingText}`,
+          },
+          createElement(
+            'span',
+            {
+              className: 'sr-only',
+            },
+            `Link to section: ${headingText}`,
+          ),
+        ),
       ],
       children,
     );
@@ -177,7 +189,7 @@ async function Code({ children, ...props }: CodeBlockProps) {
   const { className } = props;
   const codeHTML = (await highlighter).codeToHtml(children as string, {
     lang: className?.replace('language-', '') ?? 'javascript',
-    theme: 'dark-plus',
+    theme: 'github-dark-default',
   });
 
   const codeContent = codeHTML.match(/<code[^>]*>([\s\S]*)<\/code>/)?.[1] || '';

@@ -23,9 +23,9 @@ export async function generateMetadata(props: {
 
   const {
     title,
-    publishedAt: publishedTime,
-    summary: description,
     image,
+    summary: description,
+    publishedAt: publishedTime,
   } = post.metadata;
 
   const ogImage = image
@@ -48,6 +48,9 @@ export async function generateMetadata(props: {
       title,
       description,
       images: [ogImage],
+    },
+    alternates: {
+      canonical: `${DATA.url}/blog/${post.slug}`,
     },
   };
 }
