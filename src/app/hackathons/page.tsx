@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { DATA, HACKATHONS } from '@/data/resume';
 
 export const metadata: Metadata = {
-  title: 'Hackathons | Sujal Shah',
+  title: 'Hackathons',
   description:
     'Explore my hackathon projects and experiences. From ideation to implementation, see how I tackle challenges and build innovative solutions under time constraints.',
   keywords: [

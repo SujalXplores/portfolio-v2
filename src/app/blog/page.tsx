@@ -4,9 +4,10 @@ import Link from 'next/link';
 
 import { getBlogPosts } from '@/data/blog';
 import { DATA } from '@/data/resume';
+import { formatDate } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Blog | Technical Articles & Development Insights',
+  title: 'Blog',
   description:
     'Explore articles about web development, software engineering, and tech insights. Topics include React, TypeScript, Next.js, and modern web development practices.',
   keywords: [
@@ -73,14 +74,7 @@ export default async function BlogPage() {
               <Link href={`/blog/${post.slug}`}>
                 <div className="flex flex-1 flex-col justify-start gap-1 group">
                   <time className="text-xs text-muted-foreground">
-                    {new Date(post.metadata.publishedAt).toLocaleDateString(
-                      'en-US',
-                      {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                      },
-                    )}
+                    {formatDate(post.metadata.publishedAt)}
                   </time>
                   <h2 className="font-semibold leading-none group-hover:text-primary transition-colors">
                     {post.metadata.title}

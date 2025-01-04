@@ -1,8 +1,8 @@
 import { getBlogPosts } from '@/data/blog';
 import { DATA } from '@/data/resume';
 
-export async function GET() {
-  const posts = await getBlogPosts();
+export function GET() {
+  const posts = getBlogPosts();
   const sortedPosts = posts.sort(
     (a, b) =>
       new Date(b.metadata.publishedAt).getTime() -

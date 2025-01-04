@@ -1,14 +1,13 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Suspense } from 'react';
 
 import { CustomMDX } from '@/components/mdx';
 import { getBlogPosts, getPost } from '@/data/blog';
 import { DATA } from '@/data/resume';
 import { formatDate } from '@/lib/utils';
 
-export async function generateStaticParams() {
-  const posts = await getBlogPosts();
+export function generateStaticParams() {
+  const posts = getBlogPosts();
   return posts.map((post) => ({ slug: post.slug }));
 }
 
@@ -18,7 +17,7 @@ export async function generateMetadata(props: {
   }>;
 }): Promise<Metadata | undefined> {
   const params = await props.params;
-  const post = await getPost(params.slug);
+  const post = getPost(params.slug);
   if (!post) return;
 
   const {
@@ -61,7 +60,7 @@ export default async function Blog(props: {
   }>;
 }) {
   const params = await props.params;
-  const post = await getPost(params.slug);
+  const post = getPost(params.slug);
 
   if (!post) {
     notFound();
@@ -96,11 +95,9 @@ export default async function Blog(props: {
         {post.metadata.title}
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
-        <Suspense fallback={<p className="h-5" />}>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400">
-            {formatDate(post.metadata.publishedAt)}
-          </p>
-        </Suspense>
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+          {formatDate(post.metadata.publishedAt)}
+        </p>
       </div>
       <article className="prose dark:prose-invert">
         <CustomMDX source={post.content} />
