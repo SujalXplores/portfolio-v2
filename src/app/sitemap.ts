@@ -3,8 +3,8 @@ import type { MetadataRoute } from 'next';
 import { getBlogPosts } from '@/data/blog';
 import { DATA } from '@/data/resume';
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const blogPosts = await getBlogPosts();
+export default function sitemap(): MetadataRoute.Sitemap {
+  const blogPosts = getBlogPosts();
 
   const routes = ['', '/blog'].map((route) => ({
     url: `${DATA.url}${route}`,
