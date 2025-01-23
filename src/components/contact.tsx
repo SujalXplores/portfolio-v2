@@ -21,7 +21,7 @@ export default function Contact() {
             >
               with a direct question on Twitter
             </Link>{' '}
-            and I&apos;ll respond whenever I can. I will ignore all soliciting.
+            and I&apos;ll respond whenever I can.
           </p>
         </div>
       </div>
