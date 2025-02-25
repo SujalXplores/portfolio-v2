@@ -121,9 +121,9 @@ const Header = ({ title, dates, description, href }: HeaderProps) => {
             {formattedLink}
           </div>
         ) : null}
-        <Markdown className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
-          {description}
-        </Markdown>
+        <div className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
+          <Markdown>{description}</Markdown>
+        </div>
       </div>
     </CardHeader>
   );
