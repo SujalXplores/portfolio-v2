@@ -234,44 +234,28 @@ export const DATA = {
 export const HACKATHONS = [
   {
     id: 0,
-    title: 'Google Chrome Built-in AI Challenge',
-    dates: 'October 1st - December 4th, 2024',
+    title: 'Blazing Fast URL Shortener',
+    dates: 'January 31st - February 3rd, 2025',
     location: 'Remote',
     description:
-      'Developed a Chrome extension that leverages AI to enhance user experience by providing real-time translations, summaries, and more directly within the browser.',
-    image: '/svgs/hackathons/chrome.svg',
+      'Won 3rd place for developing a high-performance URL shortener using Rust and Next.js. The solution features clean architecture, efficient storage with Sled embedded database, modern UI with Tailwind CSS, and robust security including URL encryption and input validation.',
+    image: '/svgs/hackathons/rust.svg',
     links: [
       {
-        title: 'Devpost',
+        title: 'Website',
         icon: <Icons.globe className="h-4 w-4" />,
-        href: 'https://devpost.com/software/ansopedia-8uvh4m',
+        href: 'https://blazing-fast-url-shortner.vercel.app',
       },
       {
         title: 'Source',
         icon: <Icons.github className="h-4 w-4" />,
-        href: 'https://github.com/ansopedia/creator-studio',
+        href: 'https://github.com/SujalXplores/blazing-fast-url-shortner',
       },
     ],
+    win: '3rd Place Winner 🥉',
   },
   {
     id: 1,
-    title: 'Neuro Nostalgia',
-    dates: 'December 13th - 16th, 2024',
-    location: 'Remote',
-    description:
-      'Won 1st place for developing an AI-powered tool that transforms modern websites into authentic 90s-style designs. The solution preserves core functionality while implementing automated layout transformations and period-appropriate styling to recreate the nostalgic 90s web aesthetic.',
-    image: '/svgs/hackathons/neuro-nostalgia.svg',
-    links: [
-      {
-        title: 'Source',
-        icon: <Icons.github className="h-4 w-4" />,
-        href: 'https://github.com/sanjaysah101/neuro-nostalgia',
-      },
-    ],
-    win: '1st Place Winner 🏆',
-  },
-  {
-    id: 2,
     title: 'Peerlist Hackathon',
     dates: 'December 17th - 21st, 2024',
     location: 'Remote',
@@ -288,6 +272,44 @@ export const HACKATHONS = [
         title: 'Source',
         icon: <Icons.github className="h-4 w-4" />,
         href: 'https://github.com/SujalXplores/v0.diy',
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: 'Neuro Nostalgia',
+    dates: 'December 13th - 16th, 2024',
+    location: 'Remote',
+    description:
+      'Won 1st place for developing an AI-powered tool that transforms modern websites into authentic 90s-style designs. The solution preserves core functionality while implementing automated layout transformations and period-appropriate styling to recreate the nostalgic 90s web aesthetic.',
+    image: '/svgs/hackathons/neuro-nostalgia.svg',
+    links: [
+      {
+        title: 'Source',
+        icon: <Icons.github className="h-4 w-4" />,
+        href: 'https://github.com/sanjaysah101/neuro-nostalgia',
+      },
+    ],
+    win: '1st Place Winner 🏆',
+  },
+  {
+    id: 3,
+    title: 'Google Chrome Built-in AI Challenge',
+    dates: 'October 1st - December 4th, 2024',
+    location: 'Remote',
+    description:
+      'Developed a Chrome extension that leverages AI to enhance user experience by providing real-time translations, summaries, and more directly within the browser.',
+    image: '/svgs/hackathons/chrome.svg',
+    links: [
+      {
+        title: 'Devpost',
+        icon: <Icons.globe className="h-4 w-4" />,
+        href: 'https://devpost.com/software/ansopedia-8uvh4m',
+      },
+      {
+        title: 'Source',
+        icon: <Icons.github className="h-4 w-4" />,
+        href: 'https://github.com/ansopedia/creator-studio',
       },
     ],
   },
