@@ -63,7 +63,7 @@ export const DATA = {
       badges: [],
       href: 'https://zuru.tech',
       location: 'On-site',
-      title: 'Software Engineer - 2',
+      title: 'Software Engineer - 3',
       logoUrl: '/images/zuru.png',
       start: 'January 2022',
       end: 'Present',
